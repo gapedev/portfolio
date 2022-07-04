@@ -1,5 +1,5 @@
 <script>
-import Bucles from "./Bucles.svelte";
+import Bucles from "./Ejemplos/Bucles.svelte";
 
   function fetch() {
     return new Promise ((resolve, reject) => {

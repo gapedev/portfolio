@@ -1,6 +1,6 @@
 
 <script>
-import Tarea from "../components/Tarea.svelte"
+import Tarea from "./Tarea.svelte"
 
 
 let elementos = [
