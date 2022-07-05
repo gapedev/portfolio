@@ -1,14 +1,4 @@
-<script>
-import Header from "../components/Header.svelte";
 
-
+<script context="module">
+export const prerender = true
 </script>
-
-<main>
-<Header />
-
-</main>
-
-<style>
-
-</style>
