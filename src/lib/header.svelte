@@ -1,13 +1,15 @@
 <script>
 import Modal from "./modal.svelte";
+import RedesSociales from "./redes-sociales.svelte";
 
 let showModal = false;
+let nombre = "Gabi Pérez";
 
 </script>
 <header>
   <div>
     <a href="/">
-      <h1>Gabi Pérez</h1>
+      <h1>{nombre}</h1>
     </a>
   </div>
   <nav>
@@ -24,12 +26,9 @@ let showModal = false;
       <li class="header-link">
         <a href="/proyectos">Proyectos</a>
       </li>
-      <li class="header-link">
-        <a href="/contacto">Contacto</a>
-      </li>
       <li>
         <button on:click="{() => showModal = true}">
-          show modal
+          ¿Hablamos?
         </button>
       </li>
     </ul>
@@ -38,22 +37,25 @@ let showModal = false;
   {#if showModal}
 	<Modal on:close="{() => showModal = false}">
 		
-    <section>
+    <section class="section-modal-container">
       <div class="header-modal">
-        <h2>Gabi</h2>
+        <h2>{nombre}</h2>
       </div>
+    </section>
+
+    <section>
+      <RedesSociales/>
     </section>
 
 	</Modal>
 {/if}
-
-
 </header>
 
 <style>
   header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 1.4375rem 0 0 0;
   }
 
@@ -64,6 +66,7 @@ let showModal = false;
 
   ul {
     display: flex;
+    align-items: center;
   }
 
   li {
@@ -71,38 +74,20 @@ let showModal = false;
     margin-right: 1.25rem;
     font-weight: bold;
     transition: 0.3s;
-    letter-spacing: 1.1px;
+    letter-spacing: 0.0688rem;
   }
 
   li:hover {
     color: #0052CC;
     transition: 0.3s;
   }
-
-/*   .header-link {
-    display: inline-block;
+  button {
+  background-color:#0052CC;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding:0.625rem;
+  border-radius: 0.625rem;
 }
-
-  .header-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 3px;
-    background: #0052CC;
-    transition: width .3s;
-}
-
-  .header-link:hover::after {
-    width: 100%;
-} */
-
-button {
-  padding: 30px;
-}
-
-.header-modal {
-  display: flex;
-  justify-content: space-around;
-}
-
 </style>
