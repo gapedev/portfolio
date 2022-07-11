@@ -28,7 +28,7 @@
 <div class="modal-background" on:click={close}></div>
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
-  <button autofocus on:click={close}></button>
+  <button autofocus on:click={close}><i class="fa-solid fa-xmark"></i></button>
   <slot name="header"></slot>
 	<slot></slot>
   
@@ -54,7 +54,6 @@
     max-width: 32em;
     max-height: calc(100vh - 4em);
     overflow: auto;
-    padding: 1em;
     border-radius: 0.2em;
     background: white;
 		-webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -62,21 +61,24 @@
 	}
 	button {
     font-size: 1rem;
-    width: 1.875rem;
-    background: none;
-    color: #0052CC;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #0052CC;
+    color: #FFFF;
     cursor: pointer;
+    border-radius: 50%;
     border: none;
     justify-content: right;
     position: absolute;
+    top: 2.2rem;
     right: 1.875rem;
+    transition: ease-in-out 0.3s;
 	}
-
-	button:hover {
-		-webkit-animation: rotate-center 0.6s ease-in-out both;
-	        animation: rotate-center 0.6s ease-in-out both;
-	}
-
+  button:hover {
+    background-color: #e7e7e7;
+    color: #0052CC;
+    transition: ease-in-out 0.3s;
+  }
 @-webkit-keyframes scale-up-hor-right {
   0% {
     -webkit-transform: scaleX(0.4);

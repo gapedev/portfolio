@@ -1,19 +1,13 @@
-<script>
-</script>
-
 
 <section class="redes-sociales-container">
+
   <div class="redes-sociales-icon">
-    <a href="https://github.com/gapedev"></a>
+    <a target="_blank" href="https://github.com/gapedev"><i class="fa-brands fa-github"></i></a>
   </div>
   <div class="redes-sociales-icon">
-    <a href=""></a>
-  </div>
-  <div class="redes-sociales-icon">
-   <a href=""></a>
+    <a target="_blank" href="https://www.linkedin.com/in/gabriel-p%C3%A9rez-licer%C3%A1n-b0826a14b/"><i class="fa-brands fa-linkedin-in"></i></a>
   </div>
 
-  <i></i>
 </section>
 
 <style>
@@ -22,8 +16,9 @@
     display: flex;
   }
 
+
 .redes-sociales-icon a{
-    display: flex;
+    display: inline-block;
     margin-right: 10px;
     width: 35px;
     height: 35px;
@@ -31,35 +26,23 @@
     background-color: #e7e7e7;
     text-align: center;
     border-radius: 7px;
-    color: #415674
+    color: #415674;
+    transition: ease-in-out 0.3s;
+   
 }
 
 .redes-sociales-icon a:hover {
-  color: #0052CC;
-  transition: all 3s;
-  -webkit-animation: rotate-center 0.6s ease-in-out both;
-	        animation: rotate-center 0.6s ease-in-out both;
+    color: #fff;
+    background-color: #0052CC;
+    transition: ease-in-out 0.3s;
 }
 
- @-webkit-keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.redes-sociales-icon a i {
+   transition: 0.3s;
 }
-@keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+
+.redes-sociales-icon a:hover i {
+  transform: rotate(360deg);
 }
 
 </style>
