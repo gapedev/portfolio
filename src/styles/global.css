@@ -1,3 +1,9 @@
+:root {
+  --color-main:#ff451b;
+  --color-hover-main:#ffb324;
+  --background:#fff6f1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +13,7 @@
 body {
   font-family: 'Merriweather', serif;
   color: #02010A;
+  background-color: #fff6f1;
 }
 
 button {
@@ -16,4 +23,9 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.global-container {
+  left: 15%;
+  right: 15%;
 }
