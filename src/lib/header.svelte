@@ -2,11 +2,11 @@
 import RedesSociales from "./redes-sociales.svelte";
 import Menu from "$lib/menu.svelte";
 
-let showModal = false;
 let nombre = "Gabi Pérez";
+let curriculum = "Descargar CV"
 
 </script>
-<header class="global-container">
+<header>
   <div class="header-container">
    <div class="header-logo">
     <a href="/">
@@ -14,7 +14,7 @@ let nombre = "Gabi Pérez";
     </a>
    </div>
    <div class="header-curriculum">
-    <button>Descargar CV</button>
+    <button>{curriculum}</button>
    </div>
   </div>
 
@@ -34,16 +34,24 @@ let nombre = "Gabi Pérez";
 
   h1 {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: bold;
   }
 
   button {
-  background-color:#0052CC;
+  background-color:var(--color-main);
   border: none;
   color: white;
   font-weight: bold;
   cursor: pointer;
   padding:0.625rem;
   border-radius: 0.625rem;
+  font-size: 0.875rem;
+  padding: 8px 35px;
+  transition: ease-in-out 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-hover-main);
+  transition: ease-in-out 0.3s;
 }
 </style>

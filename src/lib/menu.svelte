@@ -1,50 +1,37 @@
+<script>
+  
+ const elements = [
+  {nombre:'Inicio', icono: "fa-solid fa-house-chimney",ruta:'/'},
+  {nombre:'Conóceme', icono: "fa-solid fa-address-card",ruta:'/conoceme'},
+  {nombre:'Portfolio', icono: "fa-solid fa-tarp",ruta:'/portfolio'},
+  {nombre:'Proyectos', icono: "fa-solid fa-diagram-project" ,ruta:'/proyectos'},
+  {nombre:'Contacto', icono: "fa-solid fa-envelope" ,ruta:'/contacto'}
+]
 
+  let link = false;
+
+   function handleClick() {
+        link = !link;
+    }
+</script>
 
 <nav>
 
    <div class="main-menu">
+    {#each elements as {nombre, icono, ruta}, index}
     <ul>
-      <li class="">
-        <a href="/">
+      
+      <li id={index} on:click={handleClick} class:active={link}>
+        <a href={ruta}>
         <div>
-          <i class="fa-solid fa-house-chimney"></i>
+          <i class={icono}></i>
         </div>
-        <span>Inicio</span>
+        <span>{nombre}</span>
         </a>
       </li>
-      <li class="active">
-        <a href="/conoceme"> 
-        <div>
-          <i class="fa-solid fa-address-card"></i>
-        </div>
-        <span>Conóceme</span>
-      </a>
-      </li>
-      <li class="active">
-        <a href="/portfolio">
-          <div>
-          <i class="fa-solid fa-tarp"></i>
-        </div>
-        <span>Portfolio</span>
-      </a>
-      </li>
-      <li class="active">
-        <a href="/proyectos">
-          <div>
-          <i class="fa-solid fa-diagram-project"></i>
-        </div>
-        <span>Proyectos</span>
-      </a>
-      </li>
-      <li class="active">
-        <a href="/contacto">
-          <div>
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <span>Contacto</span>
-        </a>
-      </li>
+
     </ul>
+    {/each}
    </div>
   
 </nav> 
@@ -84,44 +71,11 @@
     color: #FFF;
   }
 
-  .main-menu ul li.active:first-child {
-    width: 130px;
-  }
-
-  .main-menu ul li.active:nth-child(2) {
+  .main-menu ul li.active {
     width: 160px;
   }
 
-  .main-menu ul li.active:nth-child(3) {
-    width: 160px;
-  }
-
-  .main-menu ul li.active:nth-child(4) {
-    width: 160px;
-  }
-
-  .main-menu ul li.active:nth-child(5) {
-    width: 160px;
-  }
-  
-
-  .main-menu ul li:hover:first-child{
-    width: 130px;
-  }
-
-  .main-menu ul li:hover:nth-child(2){
-    width: 160px;
-  }
-
-  .main-menu ul li:hover:nth-child(3){
-    width: 160px;
-  }
-
-  .main-menu ul li:hover:nth-child(4){
-    width: 160px;
-  }
-
-  .main-menu ul li:hover:nth-child(5){
+  .main-menu ul li:hover{
     width: 160px;
   }
 
