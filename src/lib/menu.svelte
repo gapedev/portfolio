@@ -1,37 +1,34 @@
 <script>
   
  const elements = [
-  {nombre:'Inicio', icono: "fa-solid fa-house-chimney",ruta:'/'},
-  {nombre:'Conóceme', icono: "fa-solid fa-address-card",ruta:'/conoceme'},
-  {nombre:'Portfolio', icono: "fa-solid fa-tarp",ruta:'/portfolio'},
-  {nombre:'Proyectos', icono: "fa-solid fa-diagram-project" ,ruta:'/proyectos'},
-  {nombre:'Contacto', icono: "fa-solid fa-envelope" ,ruta:'/contacto'}
+  {clase:'link',nombre:'Inicio', icono: "fa-solid fa-house-chimney",ruta:'/'},
+  {clase:'link2', nombre:'Conóceme', icono: "fa-solid fa-address-card",ruta:'/conoceme'},
+  {clase:'link3', nombre:'Portfolio', icono: "fa-solid fa-tarp",ruta:'/portfolio'},
+  {clase:'link4', nombre:'Proyectos', icono: "fa-solid fa-diagram-project" ,ruta:'/proyectos'},
+  {clase:'link5', nombre:'Contacto', icono: "fa-solid fa-envelope" ,ruta:'/contacto'}
 ]
 
-  let link = false;
+  let current;
 
-   function handleClick() {
-        link = !link;
-    }
 </script>
 
 <nav>
 
    <div class="main-menu">
-    {#each elements as {nombre, icono, ruta}, index}
-    <ul>
-      
-      <li id={index} on:click={handleClick} class:active={link}>
-        <a href={ruta}>
-        <div>
-          <i class={icono}></i>
-        </div>
-        <span>{nombre}</span>
-        </a>
-      </li>
 
-    </ul>
-    {/each}
+    <ul>
+          {#each elements as {nombre, icono, ruta, clase}}
+            <li class:active={current === clase}
+              on:click={() => current = clase }>
+            <a href={ruta}>
+            <div>
+              <i class={icono}></i>
+            </div>
+            <span>{nombre}</span>
+            </a>
+          </li>
+          {/each}
+      </ul>
    </div>
   
 </nav> 

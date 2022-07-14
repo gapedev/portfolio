@@ -27,3 +27,10 @@
 <button on:click={gestionarCLick}>
   Hazme Click si te atreves
 </button>
+
+
+<style>
+  .texto {
+    font-size: 1.5rem;
+  }
+</style>
