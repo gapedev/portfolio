@@ -19,7 +19,7 @@
     <ul>
           {#each elements as {nombre, icono, ruta, clase}}
             <li class:active={current === clase}
-              on:click={() => current = clase }>
+              on:click={() => current = clase } on:scrolling={current = clase}>
             <a href={ruta}>
             <div>
               <i class={icono}></i>
