@@ -60,7 +60,7 @@
   }
 
   .main-menu ul li.active{
-    background-color: var(--color-main);
+    background-color: var(--color-hover-main);
   }
 
   .main-menu ul li.active span:hover {

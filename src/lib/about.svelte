@@ -1,8 +1,8 @@
 
 <script>
-export let mail = '';
-export let phone = '';
-export let adress = '';
+export let mail = 'gapedev@gmail.com';
+export let phone = 601068778;
+export let adress = 'Palma de Mallorca';
 </script>
 
 <div class="about-container">
@@ -37,9 +37,10 @@ export let adress = '';
 <style>
 .about-container {
   background-color: var(--color-main);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 1.25rem;
   width: max-content;
+  position: relative;
+  padding: 0.625rem;
 }
 
 .about-container ul li {
@@ -47,13 +48,13 @@ export let adress = '';
   color: #ffff;
   margin: 15px 0px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: baseline;
 }
 .about-container p {
   font-size: 1.3rem;
   font-weight: bold;
   padding-top: 5px;
+  margin: 0 10px;
 }
 .about-container span {
   font-size: 1rem;
