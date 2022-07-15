@@ -1,12 +1,5 @@
 <script>
-
-const jobs = [
-  {link:'https://w2fly.es', image:'../w2fly.png', title:'W2FLY'},
-  {link:'https://w2fly.es', image:'../w2fly.png', title:'W2FLY'},
-  {link:'https://w2fly.es', image:'../w2fly.png', title:'W2FLY'},
-  {link:'https://w2fly.es', image:'../w2fly.png', title:'W2FLY'},
-]
-
+import {jobs} from "../services/jobs";
 </script>
 
 <div class="cards-container">
@@ -30,18 +23,29 @@ const jobs = [
 
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill,minmax(min(100%, 300px), 1fr));
+    gap: 2rem;
   }
+
   .card-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: #FFFF;
-    box-shadow: 12px 7px 12px 7px rgba(255,135,99,.09);
+    box-shadow: 0.75rem 0.4375rem 0.75rem 0.4375rem rgba(255,135,99,.09);
     transition: ease-in-out 0.3s;
-    border-radius: 10px;
-    margin: 10px 30px;
+    border-radius: 0.625rem;
+    margin: 0.625rem 1.875rem;
+    width: 280px;
+  }
+
+  @media (max-width:876px) {
+    .card-container {
+      width: 90%;
+      padding: 15px;
+    }
+
   }
 
   .card-container:first-child {

@@ -1,25 +1,17 @@
 <script>
-  
- const elements = [
-  {clase:'link',nombre:'Inicio', icono: "fa-solid fa-house-chimney",ruta:'/'},
-  {clase:'link2', nombre:'Conóceme', icono: "fa-solid fa-address-card",ruta:'/conoceme'},
-  {clase:'link3', nombre:'Portfolio', icono: "fa-solid fa-tarp",ruta:'/portfolio'},
-  {clase:'link4', nombre:'Proyectos', icono: "fa-solid fa-diagram-project" ,ruta:'/proyectos'},
-  {clase:'link5', nombre:'Contacto', icono: "fa-solid fa-envelope" ,ruta:'/contacto'}
-]
+import {elements} from '../services/menu'
+import { page } from '$app/stores';
 
-  let current;
+let current;
 
 </script>
 
 <nav>
 
    <div class="main-menu">
-
     <ul>
-          {#each elements as {nombre, icono, ruta, clase}}
-            <li class:active={current === clase}
-              on:click={() => current = clase } on:scrolling={current = clase}>
+          {#each elements as {nombre, icono, ruta}}
+            <li class:active={$page.url.pathname === `${ruta}`}>
             <a href={ruta}>
             <div>
               <i class={icono}></i>
@@ -29,6 +21,21 @@
           </li>
           {/each}
       </ul>
+   </div>
+
+   <div class="main-menu-mobile">
+    <ul>
+      {#each elements as {nombre, icono, ruta}}
+        <li class:active={$page.url.pathname === `${ruta}`}>
+        <a href={ruta}>
+        <div>
+          <i class={icono}></i>
+        </div>
+        <span>{nombre}</span>
+        </a>
+      </li>
+      {/each}
+  </ul>
    </div>
   
 </nav> 
@@ -127,5 +134,46 @@
 
   .main-menu ul li.active i{
    color: #FFFF;
+  }
+
+  .main-menu-mobile {
+    display: none;
+  }
+
+  @media (max-width:820px) {
+
+    .main-menu {
+      display: none;
+    }
+
+    .main-menu-mobile {
+      display: inherit;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #FFFF;
+      box-shadow: 7px 7px 7px 7px rgba(255,135,99,.09);
+    }
+
+    .main-menu-mobile ul{
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .main-menu-mobile span{
+      display: none;
+    }
+
+    .main-menu-mobile i{
+      font-size: 30px;
+      color: var(--color-main);
+    }
+
+    .main-menu-mobile ul li.active i{
+     color: var(--color-hover-main);
+    }
   }
 </style>

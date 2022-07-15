@@ -12,6 +12,19 @@
 
 </section>
 
+<section class="redes-sociales-container-mobile">
+
+  <ul>
+    <li>
+      <a target="_blank" href="https://github.com/gapedev"><i class="fa-brands fa-github"></i></a>
+    </li>
+    <li>
+      <a target="_blank" href="https://www.linkedin.com/in/gabriel-p%C3%A9rez-licer%C3%A1n-b0826a14b/"><i class="fa-brands fa-linkedin-in"></i></a>
+    </li>
+  </ul>
+
+</section>
+
 <style>
 
 .redes-sociales-container {
@@ -64,6 +77,15 @@
 
 .redes-sociales-container a:hover i {
   transform: rotate(360deg);
+}
+
+.redes-sociales-container-mobile {
+  display: none;
+}
+@media (max-width:820px) {
+  .redes-sociales-container {
+    display: none;
+  }
 }
 
 </style>

@@ -54,4 +54,10 @@ button:hover {
   background-color: var(--color-hover-main);
   transition: ease-in-out 0.3s;
 }
+
+@media (max-width:768px) {
+  .header-container {
+    display: none;
+  }
+}
 </style>
