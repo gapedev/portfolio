@@ -33,11 +33,15 @@ import {jobs} from "../services/jobs";
     flex-direction: column;
     align-items: center;
     background-color: #FFFF;
-    box-shadow: 0.75rem 0.4375rem 0.75rem 0.4375rem rgba(255,135,99,.09);
+    box-shadow: 0 0 1.5625rem rgb(0 0 0 / 34%);
     transition: ease-in-out 0.3s;
     border-radius: 0.625rem;
     margin: 0.625rem 1.875rem;
     width: 280px;
+  }
+
+  .card-container:hover {
+    box-shadow: 0 0 1.5625rem rgb(0 0 0 / 34%);
   }
 
   @media (max-width:876px) {
@@ -64,6 +68,13 @@ import {jobs} from "../services/jobs";
   .card-image img:hover {
     filter: grayscale(90%);
     
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
   }
 
 </style>
